@@ -13,7 +13,7 @@ public class EmployeeServiceApplication {
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
-    }
+    } //todo поместить в отдельный конфиг. В основ
 
     public static void main(String[] args) {
         SpringApplication.run(EmployeeServiceApplication.class, args);

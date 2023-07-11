@@ -42,7 +42,7 @@ public class WebServiceConfiguration extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("EmployeesPort");
         wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://localhost:8080");
+        wsdl11Definition.setTargetNamespace("http://localhost:8080"); //todo вынести в application.yaml
         wsdl11Definition.setSchema(employeesSchema);
         return wsdl11Definition;
     }

@@ -10,7 +10,7 @@ import java.util.TimeZone;
 
 public class XMLGregorianCalendarUtil {
 
-    public static XMLGregorianCalendar now() {
+    public static XMLGregorianCalendar now() { //todo тут какая то магия, не понятно что делает.
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         DatatypeFactory datatypeFactory;

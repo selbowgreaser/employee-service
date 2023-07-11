@@ -1,0 +1,17 @@
+app:
+  cron-delete-random-employee: 0 * * ? * *
+
+server:
+  port: '8080'
+
+spring:
+  jpa:
+    show-sql: false
+
+  datasource:
+    url: 'jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:postgres}'
+    username: ${DB_LOGIN:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+  flyway:
+    locations: [ classpath:db/migration ]

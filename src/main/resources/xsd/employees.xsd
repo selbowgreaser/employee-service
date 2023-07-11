@@ -1,0 +1,538 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.selbowgreaser.org/soap/api/employee-service"
+           targetNamespace="http://www.selbowgreaser.org/soap/api/employee-service"
+           elementFormDefault="qualified">
+
+<!--    Запросы для работы с сущностью Employee     -->
+
+    <xs:element name="getEmployeesRequest">
+    </xs:element>
+
+    <xs:element name="getEmployeesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employeeResponse" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employeeResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employeeRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employeeRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteEmployeeByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteEmployeeByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    Запросы для работы с дополнительной информацией сотрудников     -->
+
+    <!--    Manager     -->
+
+    <xs:element name="getAdditionalInfoManagerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAdditionalInfoManagerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoManager" type="tns:additionalInfoManagerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoManagerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoManager" type="tns:additionalInfoManagerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoManagerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoManagerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoManager" type="tns:additionalInfoManagerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoManagerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoManagerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoManagerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--    Developer   -->
+
+    <xs:element name="getAdditionalInfoDeveloperByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAdditionalInfoDeveloperByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoDeveloper" type="tns:additionalInfoDeveloperRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoDeveloperRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoDeveloper" type="tns:additionalInfoDeveloperRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoDeveloperResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoDeveloperRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoDeveloper" type="tns:additionalInfoDeveloperRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoDeveloperResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoDeveloperByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoDeveloperByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--    Engineer    -->
+
+    <xs:element name="getAdditionalInfoEngineerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAdditionalInfoEngineerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoEngineer" type="tns:additionalInfoEngineerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoEngineerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoEngineer" type="tns:additionalInfoEngineerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoEngineerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoEngineerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoEngineer" type="tns:additionalInfoEngineerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoEngineerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoEngineerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoEngineerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--    Analyst     -->
+
+    <xs:element name="getAdditionalInfoAnalystByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAdditionalInfoAnalystByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoAnalyst" type="tns:additionalInfoAnalystRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoAnalystRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoAnalyst" type="tns:additionalInfoAnalystRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoAnalystResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoAnalystRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoAnalyst" type="tns:additionalInfoAnalystRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoAnalystResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoAnalystByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoAnalystByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--    Designer    -->
+
+    <xs:element name="getAdditionalInfoDesignerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAdditionalInfoDesignerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoDesigner" type="tns:additionalInfoDesignerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoDesignerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoDesigner" type="tns:additionalInfoDesignerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addAdditionalInfoDesignerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoDesignerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="additionalInfoDesigner" type="tns:additionalInfoDesignerRequest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateAdditionalInfoDesignerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoDesignerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteAdditionalInfoDesignerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    Описание сущностей с дополнительной информацией по позициям     -->
+
+    <xs:complexType name="additionalInfoManagerRequest">
+        <xs:sequence>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="department" type="xs:string"/>
+            <xs:element name="responsibility" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="additionalInfoDeveloperRequest">
+        <xs:sequence>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="framework" type="xs:string"/>
+            <xs:element name="databaseSkill" type="xs:string"/>
+            <xs:element name="versionControl" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="additionalInfoEngineerRequest">
+        <xs:sequence>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="programmingLanguage" type="xs:string"/>
+            <xs:element name="tool" type="xs:string"/>
+            <xs:element name="certification" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="additionalInfoAnalystRequest">
+        <xs:sequence>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="notation" type="xs:string"/>
+            <xs:element name="businessDomain" type="xs:string"/>
+            <xs:element name="requirementsGatheringTechnique" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="additionalInfoDesignerRequest">
+        <xs:sequence>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="designTool" type="xs:string"/>
+            <xs:element name="uxSkill" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+<!--    Сущность для Response   -->
+
+    <xs:complexType name="result">
+        <xs:sequence>
+            <xs:element name="code" type="xs:integer"/>
+            <xs:element name="timestamp" type="xs:dateTime"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<!--    Сущности для описания Employee  -->
+
+    <xs:simpleType name="gender">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Male"/>
+            <xs:enumeration value="Female"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="position">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Manager"/>
+            <xs:enumeration value="Developer"/>
+            <xs:enumeration value="Engineer"/>
+            <xs:enumeration value="Analyst"/>
+            <xs:enumeration value="Designer"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="education">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="HighSchool"/>
+            <xs:enumeration value="Bachelor"/>
+            <xs:enumeration value="Master"/>
+            <xs:enumeration value="PhD"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="employmentStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FullTime"/>
+            <xs:enumeration value="PartTime"/>
+            <xs:enumeration value="Contractor"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="employeeRequest">
+        <xs:sequence>
+            <xs:element name="surname" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="gender" type="tns:gender"/>
+            <xs:element name="position" type="tns:position"/>
+            <xs:element name="department" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="salary" type="xs:decimal"/>
+            <xs:element name="birthDate" type="xs:date"/>
+            <xs:element name="education" type="tns:education"/>
+            <xs:element name="employmentStatus" type="tns:employmentStatus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="employeeResponse">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="surname" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="gender" type="tns:gender"/>
+            <xs:element name="position" type="tns:position"/>
+            <xs:element name="department" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="salary" type="xs:decimal"/>
+            <xs:element name="birthDate" type="xs:date"/>
+            <xs:element name="education" type="tns:education"/>
+            <xs:element name="employmentStatus" type="tns:employmentStatus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

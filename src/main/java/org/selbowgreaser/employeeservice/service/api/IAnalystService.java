@@ -2,6 +2,10 @@ package org.selbowgreaser.employeeservice.service.api;
 
 import org.selbowgreaser.employeeservice.model.Analyst;
 
+
+/*
+    TODO лучше убрать I в начале названий, особой информативности не несет. А инициализацию с перфиксом Default или Impl
+ */
 public interface IAnalystService {
 
     Analyst findAnalystById(Long id);

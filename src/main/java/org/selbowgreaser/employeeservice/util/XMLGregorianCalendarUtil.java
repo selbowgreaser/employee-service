@@ -16,7 +16,7 @@ public class XMLGregorianCalendarUtil {
      *
      * @return The current date and time as an XMLGregorianCalendar.
      */
-    public static XMLGregorianCalendar now() { //todo тут какая то магия, не понятно что делает. done
+    public static XMLGregorianCalendar now() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         DatatypeFactory datatypeFactory = getDatatypeFactory();

@@ -2,7 +2,10 @@ package org.selbowgreaser.employeeservice.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.selbowgreaser.soap.api.employee_service.*;
+import org.selbowgreaser.soap.api.employee_service.Education;
+import org.selbowgreaser.soap.api.employee_service.EmploymentStatus;
+import org.selbowgreaser.soap.api.employee_service.Gender;
+import org.selbowgreaser.soap.api.employee_service.Position;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

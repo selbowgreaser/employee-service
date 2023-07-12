@@ -3,7 +3,7 @@ package org.selbowgreaser.employeeservice.service;
 import lombok.RequiredArgsConstructor;
 import org.selbowgreaser.employeeservice.model.Employee;
 import org.selbowgreaser.employeeservice.repository.EmployeeRepository;
-import org.selbowgreaser.employeeservice.service.api.IEmployeeService;
+import org.selbowgreaser.employeeservice.service.api.EmployeeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class EmployeeService implements IEmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 

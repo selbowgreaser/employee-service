@@ -3,14 +3,14 @@ package org.selbowgreaser.employeeservice.service;
 import lombok.RequiredArgsConstructor;
 import org.selbowgreaser.employeeservice.model.Engineer;
 import org.selbowgreaser.employeeservice.repository.EngineerRepository;
-import org.selbowgreaser.employeeservice.service.api.IEngineerService;
+import org.selbowgreaser.employeeservice.service.api.EngineerService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class EngineerService implements IEngineerService {
+public class EngineerServiceImpl implements EngineerService {
 
     private final EngineerRepository engineerRepository;
 

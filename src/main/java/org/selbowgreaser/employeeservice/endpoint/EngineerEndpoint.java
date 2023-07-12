@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.selbowgreaser.employeeservice.builder.SuccessResultBuilder;
 import org.selbowgreaser.employeeservice.model.Engineer;
-import org.selbowgreaser.employeeservice.service.api.IEngineerService;
+import org.selbowgreaser.employeeservice.service.api.EngineerService;
 import org.selbowgreaser.soap.api.employee_service.*;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -18,7 +18,7 @@ public class EngineerEndpoint {
 
     private static final String NAMESPACE_URI = "http://www.selbowgreaser.org/soap/api/employee-service";
 
-    private final IEngineerService engineerService;
+    private final EngineerService engineerService;
     private final ModelMapper modelMapper;
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAdditionalInfoEngineerByIdRequest")

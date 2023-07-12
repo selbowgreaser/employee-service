@@ -3,14 +3,14 @@ package org.selbowgreaser.employeeservice.service;
 import lombok.RequiredArgsConstructor;
 import org.selbowgreaser.employeeservice.model.Analyst;
 import org.selbowgreaser.employeeservice.repository.AnalystRepository;
-import org.selbowgreaser.employeeservice.service.api.IAnalystService;
+import org.selbowgreaser.employeeservice.service.api.AnalystService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class AnalystService implements IAnalystService {
+public class AnalystServiceImpl implements AnalystService {
 
     private final AnalystRepository analystRepository;
 

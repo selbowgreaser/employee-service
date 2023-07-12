@@ -1,5 +1,11 @@
 app:
   cron-delete-random-employee: 0 * * ? * *
+  wsdl:
+    port-type-name: EmployeesPort
+    location-uri: /ws
+    target-namespace: http://localhost:8080
+
+
 
 server:
   port: '8080'

@@ -4,8 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.selbowgreaser.employeeservice.builder.SuccessResultBuilder;
 import org.selbowgreaser.employeeservice.model.Manager;
-import org.selbowgreaser.employeeservice.service.api.IEmployeeService;
-import org.selbowgreaser.employeeservice.service.api.IManagerService;
+import org.selbowgreaser.employeeservice.service.api.ManagerService;
 import org.selbowgreaser.soap.api.employee_service.*;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -18,8 +17,7 @@ public class ManagerEndpoint {
 
     private static final String NAMESPACE_URI = "http://www.selbowgreaser.org/soap/api/employee-service";
 
-    private final IManagerService managerService;
-    private final IEmployeeService employeeService;
+    private final ManagerService managerService;
     private final ModelMapper modelMapper;
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAdditionalInfoManagerByIdRequest")

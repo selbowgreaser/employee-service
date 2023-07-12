@@ -5,6 +5,7 @@ import org.selbowgreaser.soap.api.employee_service.Position;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ public class SalaryValidator {
 
     @PostConstruct
     public void initializationSalaryRanges() {
-        salaryRanges.put(ANALYST, List.of(BigDecimal.valueOf(100000), BigDecimal.valueOf(180000))); //TODO такие значения лучше держать в БД
+        salaryRanges.put(ANALYST, List.of(BigDecimal.valueOf(100000), BigDecimal.valueOf(180000))); //TODO такие значения лучше держать в БД [Будет сделано в рамках следующей задачи]
         salaryRanges.put(DESIGNER, List.of(BigDecimal.valueOf(80000), BigDecimal.valueOf(160000)));
         salaryRanges.put(DEVELOPER, List.of(BigDecimal.valueOf(120000), BigDecimal.valueOf(210000)));
         salaryRanges.put(MANAGER, List.of(BigDecimal.valueOf(180000), BigDecimal.valueOf(320000)));
@@ -32,10 +33,12 @@ public class SalaryValidator {
 
 
         if (isInSalaryRange(salary, salaryRange)) {
-            errors.add("Заработная плата " + position + //todo попробуй MessageFormat.format
-                    " должна быть в границе от " + salaryRange.get(BOTTOM_BOUND_INDEX) +
-                    " до " + salaryRange.get(UPPER_BOUND_INDEX) +
-                    ". Было получено " + salary + ".");
+            errors.add(MessageFormat.format("Заработная плата {0} должна быть в границе от {1} до {2}" +
+                            ". Было получено {3}.",
+                    position,
+                    salaryRange.get(BOTTOM_BOUND_INDEX),
+                    salaryRange.get(BOTTOM_BOUND_INDEX),
+                    salary));
         }
     }
 

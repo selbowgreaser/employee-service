@@ -2,7 +2,7 @@ package org.selbowgreaser.employeeservice.service.api;
 
 import org.selbowgreaser.employeeservice.model.Engineer;
 
-public interface IEngineerService {
+public interface EngineerService {
 
     Engineer findEngineerById(Long id);
 

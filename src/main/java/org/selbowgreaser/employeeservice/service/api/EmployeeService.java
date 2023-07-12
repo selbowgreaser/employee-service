@@ -5,7 +5,7 @@ import org.selbowgreaser.employeeservice.model.Employee;
 
 import java.util.List;
 
-public interface IEmployeeService {
+public interface EmployeeService {
 
     List<Employee> findAll();
 

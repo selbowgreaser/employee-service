@@ -3,14 +3,14 @@ package org.selbowgreaser.employeeservice.service;
 import lombok.RequiredArgsConstructor;
 import org.selbowgreaser.employeeservice.model.Developer;
 import org.selbowgreaser.employeeservice.repository.DeveloperRepository;
-import org.selbowgreaser.employeeservice.service.api.IDeveloperService;
+import org.selbowgreaser.employeeservice.service.api.DeveloperService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class DeveloperService implements IDeveloperService {
+public class DeveloperServiceImpl implements DeveloperService {
 
     private final DeveloperRepository developerRepository;
 

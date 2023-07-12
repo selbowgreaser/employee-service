@@ -2,7 +2,7 @@ package org.selbowgreaser.employeeservice.service.api;
 
 import org.selbowgreaser.employeeservice.model.Designer;
 
-public interface IDesignerService {
+public interface DesignerService {
 
     Designer findDesignerById(Long id);
 

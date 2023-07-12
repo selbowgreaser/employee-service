@@ -2,7 +2,7 @@ package org.selbowgreaser.employeeservice.service.api;
 
 import org.selbowgreaser.employeeservice.model.Manager;
 
-public interface IManagerService {
+public interface ManagerService {
 
     Manager findManagerById(Long id);
 

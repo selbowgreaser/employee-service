@@ -2,7 +2,7 @@ package org.selbowgreaser.employeeservice.service.api;
 
 import org.selbowgreaser.employeeservice.model.Developer;
 
-public interface IDeveloperService {
+public interface DeveloperService {
 
     Developer findDeveloperById(Long id);
 

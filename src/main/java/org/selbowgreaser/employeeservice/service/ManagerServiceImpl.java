@@ -2,19 +2,17 @@ package org.selbowgreaser.employeeservice.service;
 
 import lombok.RequiredArgsConstructor;
 import org.selbowgreaser.employeeservice.model.Manager;
-import org.selbowgreaser.employeeservice.repository.EmployeeRepository;
 import org.selbowgreaser.employeeservice.repository.ManagerRepository;
-import org.selbowgreaser.employeeservice.service.api.IManagerService;
+import org.selbowgreaser.employeeservice.service.api.ManagerService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class ManagerService implements IManagerService {
+public class ManagerServiceImpl implements ManagerService {
 
     private final ManagerRepository managerRepository;
-    private final EmployeeService employeeService;
 
     @Override
     public Manager findManagerById(Long id) {

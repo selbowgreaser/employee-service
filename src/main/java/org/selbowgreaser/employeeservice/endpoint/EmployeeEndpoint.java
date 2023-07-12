@@ -5,7 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.selbowgreaser.employeeservice.builder.ErrorResultBuilder;
 import org.selbowgreaser.employeeservice.builder.SuccessResultBuilder;
 import org.selbowgreaser.employeeservice.model.Employee;
-import org.selbowgreaser.employeeservice.service.api.IEmployeeService;
+import org.selbowgreaser.employeeservice.service.api.EmployeeService;
 import org.selbowgreaser.employeeservice.util.EmployeeValidator;
 import org.selbowgreaser.employeeservice.util.XMLGregorianCalendarUtil;
 import org.selbowgreaser.soap.api.employee_service.*;
@@ -24,7 +24,7 @@ public class EmployeeEndpoint {
     private static final String NAMESPACE_URI = "http://www.selbowgreaser.org/soap/api/employee-service";
 
     private final EmployeeValidator employeeValidator;
-    private final IEmployeeService employeeService;
+    private final EmployeeService employeeService;
     private final ModelMapper modelMapper;
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getEmployeesRequest")

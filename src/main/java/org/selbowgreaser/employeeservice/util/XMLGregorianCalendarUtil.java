@@ -13,30 +13,44 @@ public class XMLGregorianCalendarUtil {
     public static XMLGregorianCalendar now() { //todo тут какая то магия, не понятно что делает.
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        DatatypeFactory datatypeFactory;
-        try {
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            throw new RuntimeException(e);
-        }
+        DatatypeFactory datatypeFactory = getDatatypeFactory();
 
         XMLGregorianCalendar xmlGregorianCalendar = datatypeFactory.newXMLGregorianCalendar();
 
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
-        gregorianCalendar.setTime(timestamp);
-        xmlGregorianCalendar.setTime(gregorianCalendar.get(GregorianCalendar.HOUR_OF_DAY),
-                gregorianCalendar.get(GregorianCalendar.MINUTE),
-                gregorianCalendar.get(GregorianCalendar.SECOND),
-                gregorianCalendar.get(GregorianCalendar.MILLISECOND));
+        GregorianCalendar gregorianCalendar = getGregorianCalendar(timestamp, xmlGregorianCalendar);
 
+        setTimeGregorianCalendar(timestamp, xmlGregorianCalendar, gregorianCalendar);
+
+        return xmlGregorianCalendar;
+    }
+
+    private static void setTimeGregorianCalendar(Timestamp timestamp, XMLGregorianCalendar xmlGregorianCalendar, GregorianCalendar gregorianCalendar) {
         gregorianCalendar.setTime(timestamp);
         xmlGregorianCalendar.setYear(gregorianCalendar.get(GregorianCalendar.YEAR));
         xmlGregorianCalendar.setMonth(gregorianCalendar.get(GregorianCalendar.MONTH) + 1);
         xmlGregorianCalendar.setDay(gregorianCalendar.get(GregorianCalendar.DAY_OF_MONTH));
 
         xmlGregorianCalendar.setTimezone(TimeZone.getDefault().getRawOffset() / (1000 * 60));
+    }
 
-        return xmlGregorianCalendar;
+    private static GregorianCalendar getGregorianCalendar(Timestamp timestamp, XMLGregorianCalendar xmlGregorianCalendar) {
+        GregorianCalendar gregorianCalendar = new GregorianCalendar();
+        gregorianCalendar.setTime(timestamp);
+        xmlGregorianCalendar.setTime(gregorianCalendar.get(GregorianCalendar.HOUR_OF_DAY),
+                gregorianCalendar.get(GregorianCalendar.MINUTE),
+                gregorianCalendar.get(GregorianCalendar.SECOND),
+                gregorianCalendar.get(GregorianCalendar.MILLISECOND));
+        return gregorianCalendar;
+    }
+
+    private static DatatypeFactory getDatatypeFactory() {
+        DatatypeFactory datatypeFactory;
+        try {
+            datatypeFactory = DatatypeFactory.newInstance();
+        } catch (DatatypeConfigurationException e) {
+            throw new RuntimeException(e);
+        }
+        return datatypeFactory;
     }
 
     public static LocalDate mapXMLGregorianCalendarToLocalDate(XMLGregorianCalendar xmlGregorianCalendar) {
@@ -44,12 +58,10 @@ public class XMLGregorianCalendarUtil {
     }
 
     public static XMLGregorianCalendar mapLocalDateToXMLGregorianCalendar(LocalDate localDate) {
-        XMLGregorianCalendar xmlGregorianCalendar;
         try {
-            xmlGregorianCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(localDate.toString());
+            return DatatypeFactory.newInstance().newXMLGregorianCalendar(localDate.toString());
         } catch (DatatypeConfigurationException e) {
             throw new RuntimeException(e);
         }
-        return xmlGregorianCalendar;
     }
 }

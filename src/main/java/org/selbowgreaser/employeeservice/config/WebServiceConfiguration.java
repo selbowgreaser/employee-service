@@ -52,7 +52,7 @@ public class WebServiceConfiguration extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName(portTypeName);
         wsdl11Definition.setLocationUri(locationUri);
-        wsdl11Definition.setTargetNamespace(targetNamespace); //todo вынести в application.yaml done
+        wsdl11Definition.setTargetNamespace(targetNamespace);
         wsdl11Definition.setSchema(employeesSchema);
         return wsdl11Definition;
     }

@@ -28,7 +28,7 @@ public class EmployeeValidator {
     }
 
     private void validateName(List<String> errors, String name) {
-        if (name.isBlank()) { //todo возможное NPE
+        if (name.isBlank()) {
             errors.add("Имя не должно быть пустым");
         } else if (containsNotLetter(name)) {
             errors.add("Имя должно содержать только буквы");
@@ -50,7 +50,7 @@ public class EmployeeValidator {
     }
 
     private void validateEmail(List<String> errors, String email) {
-        if (!email.matches(EMAIL_TEMPLATE)) { //todo вынести в констранту done
+        if (!email.matches(EMAIL_TEMPLATE)) {
             errors.add("Email должен быть в формате: something42@example.com");
         }
     }

@@ -11,6 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmployeeValidator {
 
+    public static final String EMAIL_TEMPLATE = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
     private final SalaryValidator salaryValidator;
 
     public List<String> validate(Employee employee) {
@@ -49,7 +50,7 @@ public class EmployeeValidator {
     }
 
     private void validateEmail(List<String> errors, String email) {
-        if (!email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) { //todo вынести в констранту
+        if (!email.matches(EMAIL_TEMPLATE)) { //todo вынести в констранту done
             errors.add("Email должен быть в формате: something42@example.com");
         }
     }

@@ -1,6 +1,6 @@
 package org.selbowgreaser.employeeservice.repository;
 
-import org.selbowgreaser.employeeservice.model.Analyst;
+import org.selbowgreaser.employeeservice.model.entity.position.Analyst;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

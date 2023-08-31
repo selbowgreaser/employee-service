@@ -23,5 +23,5 @@ public class Designer {
     private String designTool;
 
     @Column(name = "ux_skill")
-    private String usSkill;
+    private String uxSkill;
 }

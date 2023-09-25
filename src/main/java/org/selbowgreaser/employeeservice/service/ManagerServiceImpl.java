@@ -21,7 +21,7 @@ import java.util.Map;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class ManagerServiceImpl implements ManagerService {
+public class ManagerServiceImpl implements ManagerService { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     private final ModelMapper modelMapper;
     private final ManagerRepository managerRepository;

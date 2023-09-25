@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 @ControllerAdvice
-public class ControllerExceptionHandler {
+public class ControllerExceptionHandler { //todo создай отдельный пакет
 
     @ExceptionHandler(TaskLimitExceededException.class)
     public ResponseEntity<?> handleTaskLimitExceededException(TaskLimitExceededException exception) {

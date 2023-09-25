@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Slf4j
 @Component
-public class DesignerValidator {
+public class DesignerValidator { //todo бин не используется ?
 
     public void validate(Designer designer, Map<String, String> errors) {
         log.debug("Validating designer: {}", designer);

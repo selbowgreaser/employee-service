@@ -7,7 +7,7 @@ import org.selbowgreaser.employeeservice.model.entity.Employee;
 
 @Data
 @Entity
-@Table(name = "engineer")
+@Table(name = "engineer") //todo ошибка в названии
 public class Engineer {
 
     @Id

@@ -38,6 +38,11 @@ public class AnalystController {
 
         analystService.createAnalyst(employeeRequestDto, errors);
 
+        /*
+        TODO общие замечание
+            переработай работу валидации, можно обойтись без проверок if, пусть в слое валидации это происходит и выбрасывается исключение -> ответ пользователю
+         */
+
         if (errors.isEmpty()) {
             log.info("The analyst has been successfully registered");
             return new ResponseEntity<>(employeeRequestResultBuilder.buildEmployeeRequestResult(CREATED), CREATED);

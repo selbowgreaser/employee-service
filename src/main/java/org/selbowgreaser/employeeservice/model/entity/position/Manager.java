@@ -9,7 +9,7 @@ import org.selbowgreaser.employeeservice.model.entity.Employee;
 @Data
 @Entity
 @Table(name = "manager")
-public class Manager {
+public class Manager { //todo //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

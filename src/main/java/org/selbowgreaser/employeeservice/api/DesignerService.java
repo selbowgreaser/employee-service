@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 public interface DesignerService {
+    /*
+    TODO общие замечание
+        я бы опустил слово Designer, так как в рамках одного сервиса (у которого есть конкретная сущность) понятно тот или иной метод
+        также при текущем наименовании идут разногласия в названиях: findDesignerById и findAll
+     */
 
     void createDesigner(EmployeeRequestDto<?> employeeRequestDto, Map<String, String> errors);
 

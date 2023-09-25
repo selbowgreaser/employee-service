@@ -10,7 +10,7 @@ import java.util.Map;
 
 @Slf4j
 @Component
-public class DeveloperValidator {
+public class DeveloperValidator { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     public void validate(Developer developer, Map<String, String> errors) {
         log.debug("Validating developer: {}", developer);

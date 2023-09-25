@@ -21,7 +21,7 @@ import java.util.Map;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class DesignerServiceImpl implements DesignerService {
+public class DesignerServiceImpl implements DesignerService { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     private final ModelMapper modelMapper;
     private final DesignerRepository designerRepository;

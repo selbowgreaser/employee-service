@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
-public class SalaryValidator {
+public class SalaryValidator { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     private final SalaryRangeRepository salaryRangeRepository;
 

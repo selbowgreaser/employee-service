@@ -6,7 +6,7 @@ import org.selbowgreaser.employeeservice.model.entity.Task;
 import java.util.List;
 import java.util.UUID;
 
-public interface TaskService {
+public interface TaskService { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     List<Task> findAll();
 

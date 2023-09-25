@@ -25,7 +25,7 @@ public class ListMapToBatchFieldErrorsMapper {
             }
 
             BatchFieldError batchFieldError = BatchFieldError.builder()
-                    .requestNumber(counter++)
+                    .requestNumber(counter++) //todo это зачем ?
                     .errors(mapToFieldErrorsMapper.mapMapToFieldErrors(errors))
                     .build();
             batchFieldErrors.add(batchFieldError);

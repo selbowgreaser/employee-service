@@ -21,7 +21,7 @@ public class BatchEmployeesResultBuilder {
         return BatchEmployeesResult.builder()
                 .timestamp(LocalDateTime.now())
                 .status(CREATED)
-                .message("Сотрудники, прошедшие валидацию, созданы!")
+                .message("Сотрудники, прошедшие валидацию, созданы!") //todo можно просто "Сотрудники созданы!"
                 .batchFieldErrors(listMapToBatchFieldErrorsMapper.mapListMapToBatchFieldErrors(allErrors))
                 .build();
     }

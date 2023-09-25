@@ -9,6 +9,12 @@ import java.util.Map;
 
 public interface ManagerService {
 
+    /*
+    TODO общие замечание
+        я бы опустил слово Manager, так как в рамках одного сервиса (у которого есть конкретная сущность) понятно тот или иной метод
+        также при текущем наименовании идут разногласия в названиях: findManagerById и findAll
+     */
+
     void createManager(EmployeeRequestDto<?> employeeRequestDto, Map<String, String> errors);
 
     List<Manager> findAll();

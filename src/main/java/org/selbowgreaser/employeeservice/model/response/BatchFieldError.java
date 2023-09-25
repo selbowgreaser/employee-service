@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class BatchFieldError {
 
-    @JsonProperty("request_number")
+    @JsonProperty("request_number") //todo зачем snake_case ?
     private Long requestNumber;
 
     @JsonProperty("errors")

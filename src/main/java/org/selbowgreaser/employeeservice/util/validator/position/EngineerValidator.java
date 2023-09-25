@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Slf4j
 @Component
-public class EngineerValidator {
+public class EngineerValidator { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     public void validate(Engineer engineer, Map<String, String> errors) {
         log.debug("Validating engineer: {}", engineer);

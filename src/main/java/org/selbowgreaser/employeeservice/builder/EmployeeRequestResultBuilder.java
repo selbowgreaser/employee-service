@@ -11,7 +11,7 @@ import java.util.UUID;
 import static org.springframework.http.HttpStatus.CREATED;
 
 @Component
-public class EmployeeRequestResultBuilder {
+public class EmployeeRequestResultBuilder { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     public Result buildEmployeeRequestResult(HttpStatus httpStatus) {
         return Result.builder()

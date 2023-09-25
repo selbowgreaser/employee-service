@@ -68,6 +68,11 @@ public class ManagerController {
 
         log.info("Updating manager with ID: {}", id);
 
+        /*
+        TODO общие замечание
+            переработай работу валидации, можно обойтись без проверок if, пусть в слое валидации это происходит и выбрасывается исключение -> ответ пользователю
+         */
+
         managerService.updateManager(id, updatedManagerDto, errors);
 
         if (errors.isEmpty()) {

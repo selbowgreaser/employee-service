@@ -21,7 +21,7 @@ import java.util.Map;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class AnalystServiceImpl implements AnalystService {
+public class AnalystServiceImpl implements AnalystService { //todo лишняя зависимость. Надо настроить(при коммите есть настройка автоиморта)
 
     private final ModelMapper modelMapper;
     private final AnalystRepository analystRepository;

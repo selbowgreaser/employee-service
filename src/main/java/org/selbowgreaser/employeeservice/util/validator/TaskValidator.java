@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class TaskValidator {
+public class TaskValidator {//todo не используется
 
 
 }
